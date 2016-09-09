@@ -1,1 +1,1 @@
-web: gunicorn pavlutin.wsgi
+web: gunicorn pavlutin.wsgi --log-file=-
