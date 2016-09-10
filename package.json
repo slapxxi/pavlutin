@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Personal Website",
   "main": "pavlutin/static/js/bundle.js",
+  "engines": {
+    "node": "6.3.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/slavapavlutin/pavlutin.git"
