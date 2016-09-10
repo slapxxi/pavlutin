@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './static/js/index.js',
+  entry: './src/js/index.js',
   output: {
-    path: __dirname,
-    publichPath: '/static/',
+    path: './static/js/',
+    publichPath: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -15,15 +15,15 @@ module.exports = {
       {
         exclude: /node_modules/,
         test: /\.css$/,
-        loader: 'style!css'
+        loader: 'style-loader!css-loader!postcss-loader'
       }
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
     contentBase: './'
+  },
+  postcss: function() {
+    return [require('autoprefixer'), require('precss')]
   }
 }
