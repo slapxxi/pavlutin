@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/slavapavlutin/pavlutin#readme",
   "dependencies": {
-    "babel-preset-stage-1": "^6.13.0"
+    "babel-preset-stage-1": "^6.13.0",
+    "postcss-cli": "^2.6.0",
+    "webpack": "^1.13.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
@@ -31,7 +33,6 @@
     "jquery": "^2.2.1",
     "postcss-loader": "^0.13.0",
     "precss": "^1.4.0",
-    "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
   },
   "scripts": {
