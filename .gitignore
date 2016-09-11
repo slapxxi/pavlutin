@@ -1,5 +1,6 @@
 __pycache__
 *.pyc
-pavlutin/static/*
+pavlutin/static
 node_modules
 npm-debug.log
+static
