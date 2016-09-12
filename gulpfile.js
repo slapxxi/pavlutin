@@ -11,8 +11,9 @@ gulp.task('watch', () => {
 
 gulp.task('build', ['clean', 'build:css', 'build:js']);
 
-gulp.task('clean', () => {
-  return del(['static/css', 'static/js']);
+gulp.task('clean', (cb) => {
+  del(['static/css', 'static/js']);
+  return cb(null);
 });
 
 gulp.task('build:css', () => {
