@@ -25,14 +25,17 @@
     "babel-preset-stage-1": "^6.13.0",
     "css-loader": "^0.25.0",
     "cssnano": "^3.7.4",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-concat-css": "^2.3.0",
     "gulp-postcss": "^6.2.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-webpack": "^1.5.0",
     "jquery": "^2.2.1",
     "postcss-cli": "^2.6.0",
     "postcss-loader": "^0.13.0",
     "precss": "^1.4.0",
+    "slick-carousel": "^1.6.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   },
@@ -44,6 +47,6 @@
   },
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "postinstall": "webpack && gulp css"
+    "postinstall": "gulp build"
   }
 }
