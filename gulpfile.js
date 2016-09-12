@@ -1,12 +1,12 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 
-gulp.task('css', function() {
-  var postcss = require('gulp-postcss');
-  var sourcemaps = require('gulp-sourcemaps');
-  var concatcss = require('gulp-concat-css');
+gulp.task('css', () => {
+  const postcss = require('gulp-postcss');
+  const sourcemaps = require('gulp-sourcemaps');
+  const concatcss = require('gulp-concat-css');
 
-  var postcssProcessors = [
+  const postcssProcessors = [
     require('autoprefixer'),
     require('precss')({
       import: {extension: 'scss'}
@@ -22,6 +22,6 @@ gulp.task('css', function() {
 });
 
 
-gulp.task('watch:css', function() {
-  gulp.watch(['src/**/*.css', 'src/**/*.scss'], ['css']);
+gulp.task('watch:css', () => {
+  gulp.watch(['src/**/*.css', 'src/**/*.scss'], ['css'])
 })

@@ -46,5 +46,16 @@
 
 	"use strict";
 
+	var plugin = function plugin() {
+	  for (var _len = arguments.length, values = Array(_len), _key = 0; _key < _len; _key++) {
+	    values[_key] = arguments[_key];
+	  }
+
+	  var value = values[0];
+	  var valueTwo = values[1];
+
+	  console.log(value, valueTwo);
+	};
+
 /***/ }
 /******/ ]);

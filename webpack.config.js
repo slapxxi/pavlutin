@@ -24,6 +24,6 @@ module.exports = {
     contentBase: './'
   },
   postcss: function() {
-    return [require('autoprefixer'), require('precss')]
+    return [require('autoprefixer'), require('precss')({import: {extension: 'scss'}})]
   }
 }
