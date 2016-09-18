@@ -1,0 +1,30 @@
+.l-header {
+  overflow: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $accent-color;
+  font-family: $font-caps;
+}
+
+.l-header > .logo {
+  float: left;
+  line-height: 1em;
+}
+
+.l-header > nav {
+  float: right;
+  text-align: right;
+  // text-transform: uppercase;
+  line-height: 1em;
+  font-size: 0.9em;
+}
+
+.l-header a {
+  display: block;
+  text-decoration: none;
+  color: $font-color;
+
+  &:hover {
+    color: $link-active-color;
+  }
+}

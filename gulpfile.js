@@ -8,7 +8,7 @@ const ENV = environment(process.env.NODE_ENV);
 gulp.task('default', ['build'])
 
 gulp.task('watch', () => {
-  gulp.watch('src/**/*.{js,css,scss}', ['build'])
+  return gulp.watch('src/**/*.{js,css,scss}', ['build'])
 });
 
 gulp.task('build', ['build:css', 'build:js']);
@@ -29,8 +29,9 @@ gulp.task('build:css', ['clean'], () => {
   return gulp.src('src/**/*.css')
     .pipe(sourcemaps.init())
     .pipe(postcss(postcssProcessors))
+    .on('error', handleError)
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('static'));
+    .pipe(gulp.dest('static'))
 });
 
 gulp.task('build:js', ['clean'], () => {
@@ -45,4 +46,9 @@ gulp.task('clean', () => {
 
 function environment(env) {
   return env || 'development';
+}
+
+function handleError(e) {
+  console.log(e.toString());
+  this.emit('end');
 }

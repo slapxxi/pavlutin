@@ -1,0 +1,21 @@
+.l-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid $accent-color;
+}
+
+.l-footer small {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: $font-light-color;
+}
+
+.l-footer a {
+  color: $font-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color;
+  }
+}
