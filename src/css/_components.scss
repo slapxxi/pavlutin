@@ -2,11 +2,11 @@
   padding: 0 20%;
   margin: 0 auto;
 
-  @media (max-width: 960px) {
+  @media (max-width: 960px), (max-device-width: 960px) {
     padding: 0 10%;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 640px), (max-device-width: 640px) {
     padding: 0 5%;
   }
 }
