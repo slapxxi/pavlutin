@@ -12,51 +12,45 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:300,400" rel="stylesheet">
 </head>
 <body>
-  <div class="wrapper">
-    <header class="l-header l-container">
-      <h1 class="logo">
-        <a href="{% url 'pages:index' %}">Slava Pavlutin</a>
-      </h1>
+  <header class="l-header l-container">
+    <h1 class="logo">
+      <a href="{% url 'pages:index' %}">Slava Pavlutin</a>
+    </h1>
 
-      <nav class="nav">
-        <ul>
-          <li>
-            <a href="{% url 'pages:index' %}">Projects
-              <span class="icon">&#x25BE;</span>
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'pages:index' %}">Blog
-              <span class="icon">&#x25BE;</span>
-            </a>
-          </li>
-          <li><a href="{% url 'pages:index' %}">About</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="{% url 'pages:index' %}">Projects</a>
+        </li>
+        <li>
+          <a href="{% url 'pages:index' %}">Blog</a>
+        </li>
+        <li><a href="{% url 'pages:index' %}">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="l-content l-container">
-      {% block content %}
-      {% endblock %}
-    </div>
-
-    <footer class="l-footer l-container">
-      <nav class="nav">
-        <ul>
-          <li>
-            <a href="http://twitter.com" rel="external">Twitter</a>
-          </li>
-          <li>
-            <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
-          </li>
-        </ul>
-      </nav>
-
-      <small>
-        <span class="logo">Slava Pavlutin</span> &copy; 2016
-      </small>
-    </footer>
+  <div class="l-content l-container">
+    {% block content %}
+    {% endblock %}
   </div>
+
+  <footer class="l-footer l-container">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="http://twitter.com" rel="external">Twitter</a>
+        </li>
+        <li>
+          <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
+        </li>
+      </ul>
+    </nav>
+
+    <small>
+      <span class="logo">Slava Pavlutin</span> &copy; 2016
+    </small>
+  </footer>
 
   <script src="{% static 'js/bundle.js' %}"></script>
 </body>

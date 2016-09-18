@@ -1,21 +1,9 @@
 .l-container {
-  padding: 0 20%;
+  padding: 0 5%;
   margin: 0 auto;
-
-  @media (max-width: 960px), (max-device-width: 960px) {
-    padding: 0 10%;
-  }
-
-  @media (max-width: 640px), (max-device-width: 640px) {
-    padding: 0 5%;
-  }
 }
 
 .logo {
-  padding: 0;
-  margin: 0;
-  font-size: 1em;
-  font-weight: 500;
   font-family: $font-caps;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -29,14 +17,7 @@
   }
 
   li {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    margin-left: 1em;
-
-    &:first-child {
-      margin-left: 0;
-    }
+    margin: 1em;
   }
 }
 
