@@ -17,7 +17,17 @@
   }
 
   li {
+    border-bottom: 1px solid $font-color;
     margin: 1em 0;
+
+    &:hover {
+      border-color: white;
+    }
+
+    > a {
+      display: block;
+      padding: 1em 0;
+    }
   }
 }
 

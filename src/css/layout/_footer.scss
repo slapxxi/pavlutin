@@ -3,6 +3,7 @@
   padding-bottom: 1em;
   border-top: 1px solid $font-light-color;
   margin-top: 7em;
+  background-color: $bg-dark;
 }
 
 .l-footer small {
@@ -10,11 +11,11 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 0.5em;
-  color: $font-light-color;
+  color: $font-color;
 }
 
 .l-footer a {
-  color: $font-color;
+  color: $font-light-color;
   text-decoration: none;
 
   &:hover {

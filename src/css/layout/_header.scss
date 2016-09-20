@@ -4,12 +4,16 @@
   padding-bottom: 1em;
   border-bottom: 1px solid $font-light-color;
   margin-bottom: 3em;
+  background-color: $bg-dark;
   font-family: $font-caps;
 }
 
 .l-header > .logo {
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
   line-height: 1em;
   text-align: center;
+  color: white;
 }
 
 .l-header > nav {
@@ -18,7 +22,7 @@
 
 .l-header a {
   text-decoration: none;
-  color: $font-color;
+  color: $font-light-color;
 
   &:hover {
     color: $link-active-color;

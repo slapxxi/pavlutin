@@ -96,7 +96,7 @@ html {
 
 body {
   background-color: $white;
-  font-size: 2.8em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.3em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
   font-family: $font-main;
@@ -106,8 +106,8 @@ body {
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 2rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-weight: 300;
   font-family: $font-secondary;
   color: $font-dark-color;
@@ -132,7 +132,8 @@ h6 { font-size: 2.5rem; line-height: 1.6; }
 
 p {
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 a:link, a:visited {
