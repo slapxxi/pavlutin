@@ -1,39 +1,41 @@
-.l-container {
+.layout-container {
   padding: 0 5%;
   margin: 0 auto;
 }
 
-.logo {
+.site-logo {
   font-family: $font-caps;
   font-weight: 200;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
 
-.nav {
-  ul {
+.site-nav {
+  > ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   li {
+    margin: 0;
     border-bottom: 1px solid $font-color;
-    margin: 1em 0;
 
     &:hover {
       border-color: white;
     }
 
+    &:last-child {
+      border: 0;
+    }
+
     > a {
       display: block;
-      padding: 1em 0;
+      padding: 2em 0;
+
+      &:hover {
+        color: $font-color;
+      }
     }
   }
-}
-
-.icon {
-  display: inline-block;
-  font-size: 0.9333333em;
-  vertical-align: top;
 }

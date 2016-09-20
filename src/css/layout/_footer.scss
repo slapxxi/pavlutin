@@ -1,12 +1,13 @@
-.l-footer {
+.site-footer {
   padding-top: 1em;
   padding-bottom: 1em;
   border-top: 1px solid $font-light-color;
   margin-top: 7em;
   background-color: $bg-dark;
+
 }
 
-.l-footer small {
+.site-footer > small {
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -14,7 +15,7 @@
   color: $font-color;
 }
 
-.l-footer a {
+.site-footer a {
   color: $font-light-color;
   text-decoration: none;
 

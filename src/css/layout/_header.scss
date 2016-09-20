@@ -1,4 +1,4 @@
-.l-header {
+.site-header {
   overflow: auto;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -8,19 +8,19 @@
   font-family: $font-caps;
 }
 
-.l-header > .logo {
+.site-header > .site-logo {
   margin-top: 0.5em;
   margin-bottom: 0.1em;
   line-height: 1em;
-  text-align: center;
+  text-align: right;
   color: white;
 }
 
-.l-header > nav {
+.site-header > nav {
   line-height: 1em;
 }
 
-.l-header a {
+.site-header a {
   text-decoration: none;
   color: $font-light-color;
 

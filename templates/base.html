@@ -8,16 +8,15 @@
 
   <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
 
-  <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Bitter|Open+Sans|PT+Sans|Slabo+27px" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway:200,300,400|Roboto:300,400" rel="stylesheet">
 </head>
 <body>
-  <header class="l-header l-container">
-    <h1 class="logo">
+  <header class="site-header layout-container">
+    <h1 class="site-logo">
       <a href="{% url 'pages:index' %}">Slava Pavlutin</a>
     </h1>
 
-    <nav class="nav">
+    <nav class="site-nav">
       <ul>
         <li>
           <a href="{% url 'pages:index' %}">Projects</a>
@@ -30,13 +29,13 @@
     </nav>
   </header>
 
-  <div class="l-content l-container">
+  <div class="site-content layout-container">
     {% block content %}
     {% endblock %}
   </div>
 
-  <footer class="l-footer l-container">
-    <nav class="nav">
+  <footer class="site-footer layout-container">
+    <nav class="site-nav">
       <ul>
         <li>
           <a href="http://twitter.com" rel="external">Twitter</a>
@@ -48,7 +47,7 @@
     </nav>
 
     <small>
-      <span class="logo">Slava Pavlutin</span> &copy; 2016
+      <span class="site-logo">Slava Pavlutin</span> &copy; 2016
     </small>
   </footer>
 
