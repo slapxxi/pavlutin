@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const webpack = require('gulp-webpack');
 const del = require('del');
 
 const ENV = environment(process.env.NODE_ENV);
@@ -8,12 +7,13 @@ const ENV = environment(process.env.NODE_ENV);
 gulp.task('default', ['build'])
 
 gulp.task('watch', () => {
-  return gulp.watch('src/**/*.{js,css,scss}', ['build'])
+  gulp.watch('src/**/*.js', ['build:js']);
+  gulp.watch('src/**/*.{css,scss}', ['build:css']);
 });
 
 gulp.task('build', ['build:css', 'build:js']);
 
-gulp.task('build:css', ['clean'], () => {
+gulp.task('build:css', ['clean:css'], () => {
   const postcss = require('gulp-postcss');
   const sourcemaps = require('gulp-sourcemaps');
   const concatcss = require('gulp-concat-css');
@@ -34,14 +34,25 @@ gulp.task('build:css', ['clean'], () => {
     .pipe(gulp.dest('static'))
 });
 
-gulp.task('build:js', ['clean'], () => {
+gulp.task('build:js', ['clean:js'], () => {
+  const webpack = require('gulp-webpack');
   return gulp.src('src/js/index.js')
     .pipe(webpack(require('./webpack.config')))
     .pipe(gulp.dest('static/js'))
-})
+});
 
-gulp.task('clean', () => {
-  return del(['static/css', 'static/js']);
+gulp.task('clean:css', () => {
+  return del(['static/css']);
+});
+
+gulp.task('clean:js', () => {
+  return del(['static/js']);
+});
+
+gulp.task('lint:css', () => {
+  const stylelint = require('gulp-stylelint');
+  return gulp.src('src/**/*.{css,scss}')
+    .pipe(stylelint({reporters: [{formatter: 'string', console: true}]}));
 });
 
 function environment(env) {
