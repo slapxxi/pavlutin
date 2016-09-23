@@ -1,3 +1,4 @@
+/*stylelint-disable*/
 .container {
   position: relative;
   width: 100%;
@@ -106,7 +107,7 @@ body {
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
+:--heading {
   margin-top: 1em;
   margin-bottom: 1em;
   font-weight: 300;
@@ -395,3 +396,4 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+/*stylelint-enable*/

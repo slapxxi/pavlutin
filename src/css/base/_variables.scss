@@ -18,9 +18,12 @@
   --font-secondary: "Playfair Display", Georgia, serif;
   --font-caps: "Raleway", Helvetica, sans-serif;
 
-  --gutter: 2.3rem;
+  --layout-gutter: 2.3rem;
 
-  --media-screen-desktop: 960px;
-  --media-screen-laptop: 640px;
-  --media-screen-mobile: 440px;
+  @custom-media --screen-desktop (width >= 960px);
+  @custom-media --screen-laptop (440px <= width <= 960px);
+  @custom-media --screen-mobile (width <= 440px);
+
+  @custom-selector :--heading h1,h2,h3,h4,h5,h6;
+  @custom-selector :--link a:link, a:visited;
 }
