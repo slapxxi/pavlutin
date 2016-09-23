@@ -1,4 +1,4 @@
 ::selection {
-  background-color: yellow;
-  color: $grey-dark;
+  background-color: var(--color-selection);
+  color: var(--color-selection-fg);
 }

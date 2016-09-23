@@ -23,6 +23,7 @@ gulp.task('build:css', ['clean'], () => {
     require('precss')({
       import: {extension: 'scss'}
     }),
+    require('postcss-cssnext'),
     require('cssnano')
   ];
 

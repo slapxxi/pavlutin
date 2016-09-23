@@ -2,10 +2,10 @@
   overflow: auto;
   padding-top: 1em;
   padding-bottom: 1em;
-  border-bottom: 1px solid $font-light-color;
+  border-bottom: 1px solid var(--color-font-light);
   margin-bottom: 3em;
-  background-color: $bg-dark;
-  font-family: $font-caps;
+  background-color: var(--color-bg-dark);
+  font-family: var(--font-caps);
 }
 
 .site-header > .site-logo {
@@ -22,9 +22,9 @@
 
 .site-header a {
   text-decoration: none;
-  color: $font-light-color;
+  color: var(--color-font-light);
 
   &:hover {
-    color: $link-active-color;
+    color: var(--color-link-active);
   }
 }

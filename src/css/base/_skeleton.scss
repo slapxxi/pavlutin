@@ -95,12 +95,13 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: $white;
+  background-color: var(--color-bg);
   font-size: 1.3em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: $font-main;
-  color: $font-dark-color; }
+  font-family: var(--font-main);
+  color: var(--color-font-dark);
+}
 
 
 /* Typography
@@ -109,8 +110,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1em;
   margin-bottom: 1em;
   font-weight: 300;
-  font-family: $font-secondary;
-  color: $font-dark-color;
+  font-family: var(--font-secondary);
+  color: var(--color-font-dark);
 }
 
 h1 { font-size: 7.0rem; line-height: 1.2; }
@@ -137,7 +138,7 @@ p {
 }
 
 a:link, a:visited {
-  color: $link-color;
+  color: var(--color-link);
 }
 
 a:hover, a:active, a:focus {

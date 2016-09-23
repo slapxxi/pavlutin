@@ -1,10 +1,5 @@
-.layout-container {
-  padding: 0 5%;
-  margin: 0 auto;
-}
-
 .site-logo {
-  font-family: $font-caps;
+  font-family: var(--font-caps);
   font-weight: 200;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -19,7 +14,7 @@
 
   li {
     margin: 0;
-    border-bottom: 1px solid $font-color;
+    border-bottom: 1px solid var(--color-font);
 
     &:hover {
       border-color: white;
@@ -34,8 +29,23 @@
       padding: 2em 0;
 
       &:hover {
-        color: $font-color;
+        color: var(--color-font);
       }
     }
   }
+}
+
+/* Navigation */
+
+.nav {
+  > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.nav__item {
+  padding: 0;
+  margin: 0;
 }

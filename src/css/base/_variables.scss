@@ -1,27 +1,26 @@
-$accent-color: $white-dimmed;
-$bg-dark: #202023;
+:root {
+  --color-accent: var(--white-dimmed);
 
-/* Links */
+  --color-bg-dark: var(--white);
+  --color-bg-dark: var(--grey-dark);
 
-$link-color: $blue;
-$link-active-color: $cyan;
+  --color-link: var(--blue);
+  --color-link-active: var(--cyan);
 
-/* Fonts */
+  --color-font: var(--grey-middle);
+  --color-font-light: var(--grey-light);
+  --color-font-dark: var(--grey-dark);
 
-$font-light-color: $grey-light;
-$font-color: $grey-middle;
-$font-dark-color: $grey-dark;
+  --color-selection: var(--yellow);
+  --color-selection-fg: var(--grey-dark);
 
-$font-main: "Open Sans", "Helvetica Neue", sans-serif;
-$font-secondary: "Playfair Display", Georgia, serif;
-$font-caps: "Raleway", Helvetica, sans-serif;
+  --font-main: "Open Sans", "Helvetica Neue", sans-serif;
+  --font-secondary: "Playfair Display", Georgia, serif;
+  --font-caps: "Raleway", Helvetica, sans-serif;
 
-/* Layout */
+  --gutter: 2.3rem;
 
-$gutter: 2.3rem;
-
-/* Media Queries */
-
-$device-screen-desktop: 960px;
-$device-screen-laptop: 640px;
-$device-screen-mobile: 440px;
+  --media-screen-desktop: 960px;
+  --media-screen-laptop: 640px;
+  --media-screen-mobile: 440px;
+}
