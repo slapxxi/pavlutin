@@ -8,3 +8,17 @@
   padding-right: 5%;
   margin: 0 auto;
 }
+
+@media (--screen-tablet) {
+  .layout-container {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@media (--screen-desktop) {
+  .layout-container {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}

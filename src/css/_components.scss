@@ -8,7 +8,7 @@
   text-decoration: none;
   font-size: 1.5em;
 
-  > a {
+  & > a {
     text-decoration: none;
     color: var(--color-font-light);
 
@@ -47,6 +47,23 @@
 
     &:hover {
       color: var(--color-font-light);
+    }
+  }
+}
+
+@media (--screen-tablet) {
+  .nav__item {
+    display: inline-block;
+    border: 0;
+    margin-left: 1em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    & > a {
+      padding: 0;
+      line-height: 1.9;
     }
   }
 }

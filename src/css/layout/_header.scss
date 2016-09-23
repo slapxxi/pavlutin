@@ -15,7 +15,19 @@
     color: var(--color-font-light);
   }
 
-  > .nav {
+  .nav {
     line-height: 1;
+  }
+}
+
+@media (--screen-tablet) {
+  .layout-header {
+    & > .logo {
+      float: right;
+    }
+
+    & .nav {
+      float: left;
+    }
   }
 }
