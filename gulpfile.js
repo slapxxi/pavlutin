@@ -19,7 +19,6 @@ gulp.task('build:css', ['clean'], () => {
   const concatcss = require('gulp-concat-css');
 
   const postcssProcessors = [
-    require('autoprefixer'),
     require('precss')({
       import: {extension: 'scss'}
     }),
