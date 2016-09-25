@@ -22,8 +22,16 @@
 
 @media (--screen-tablet) {
   .layout-header {
+    padding-top: 0;
+    padding-bottom: 0;
+
     & > .logo {
       float: right;
+
+      & > a {
+        display: block;
+        padding: 1em 0;
+      }
     }
 
     & .nav {
