@@ -3,16 +3,17 @@
 
   --color-bg: var(--white);
   --color-bg-dark: var(--grey-dark);
+  --color-bg-light: var(--red);
 
-  --color-link: var(--blue);
-  --color-link-active: var(--cyan);
+  --color-link: var(--red);
+  --color-link-active: var(--red);
 
   --color-font: var(--grey-middle);
   --color-font-light: var(--grey-light);
   --color-font-dark: var(--grey-dark);
 
-  --color-selection: var(--yellow);
-  --color-selection-fg: var(--grey-dark);
+  --color-selection: var(--red);
+  --color-selection-fg: var(--white);
 
   --font-main: "Open Sans", "Helvetica Neue", sans-serif;
   --font-secondary: "Playfair Display", Georgia, serif;
@@ -26,4 +27,5 @@
 
   @custom-selector :--heading h1,h2,h3,h4,h5,h6;
   @custom-selector :--link a:link, a:visited;
+  @custom-selector :--link-active a:hover, a:focus, a:active;
 }
