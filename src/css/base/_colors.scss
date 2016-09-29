@@ -11,4 +11,6 @@
   --cyan: #31D7FF;
   --yellow: #FFE070;
   --red: #ED1C24;
+  --red-dark: color(var(--red) blackness(20%));
+  --red-light: color(var(--red) tint(20%));
 }
