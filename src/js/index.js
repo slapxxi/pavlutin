@@ -9,9 +9,8 @@ $(document).ready(() => {
     const $heading = $(heading);
     const attr = toUniqueID(i, $heading.text());
     const Link = $(`<a class="anchor" href="#${attr}">#</a>`);
-    $heading.addClass('anchor__hook');
     $heading.attr('id', attr);
-    $heading.prepend(Link);
+    $heading.append(Link);
   });
 });
 
