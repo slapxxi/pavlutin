@@ -24,9 +24,9 @@
 
   --layout-gutter: 2.3rem;
 
-  @custom-media --screen-desktop (device-width >= 960px) and (width >= 960px);
-  @custom-media --screen-tablet (device-width >= 440px) and (width >= 600px);
-  @custom-media --screen-mobile (device-width <= 440px);
+  @custom-media --screen-desktop (width >= 960px);
+  @custom-media --screen-tablet (width >= 600px);
+  @custom-media --screen-mobile (width <= 440px);
 
   @custom-selector :--heading h1,h2,h3,h4,h5,h6;
   @custom-selector :--link a:link, a:visited;
