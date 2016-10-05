@@ -17,19 +17,20 @@ gulp.task('build:css', ['clean:css'], () => {
   const postcss = require('gulp-postcss');
   const sourcemaps = require('gulp-sourcemaps');
   const concatcss = require('gulp-concat-css');
+  const cssnano = require('gulp-cssnano');
 
   const postcssProcessors = [
     require('precss')({
       import: {extension: 'scss'}
     }),
-    require('postcss-cssnext'),
-    require('cssnano')
+    require('postcss-cssnext')
   ];
 
   return gulp.src('src/**/*.css')
     .pipe(sourcemaps.init())
     .pipe(postcss(postcssProcessors))
     .on('error', handleError)
+    .pipe(cssnano({discardComments: {removeAll: true}}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('static'))
 });
