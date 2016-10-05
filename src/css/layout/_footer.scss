@@ -16,10 +16,10 @@
   }
 
   & :--link {
-    color: var(--color-font-light);
+    color: var(--color-font-lightest);
   }
 
   & :--link-active {
-    color: var(--color-font-light);
+    color: var(--color-font-em-dark);
   }
 }
