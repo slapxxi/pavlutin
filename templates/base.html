@@ -14,46 +14,14 @@
   <link rel="stylesheet" href="{% static 'css/bundle.css' %}">
 </head>
 <body>
-  <header class="layout-header layout-container">
-    <h1 class="logo">
-      <a href="{% url 'pages:index' %}">Slava Pavlutin</a>
-    </h1>
-
-    <nav class="nav" role="navigation">
-      <ul class="nav">
-        <li class="nav__item">
-          <a href="{% url 'pages:index' %}">Projects</a>
-        </li>
-        <li class="nav__item">
-          <a href="{% url 'pages:index' %}">Blog</a>
-        </li>
-        <li class="nav__item">
-          <a href="{% url 'pages:index' %}">Contact Me</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  {% include "partials/_header.html" %}
 
   <section class="layout-content layout-container">
     {% block content %}
     {% endblock %}
   </section>
-
-  <footer class="layout-footer layout-container_fill">
-    <h3>Social Links</h3>
-    <ul>
-      <li>
-        <a href="http://twitter.com" rel="external">Twitter</a>
-      </li>
-      <li>
-        <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
-      </li>
-    </ul>
-
-    <small class="copy">
-      <span class="logo">Slava Pavlutin</span> &copy; 2016
-    </small>
-  </footer>
+  
+  {% include "partials/_footer.html" %}
 
   <script src="{% static 'js/bundle.js' %}"></script>
 </body>
