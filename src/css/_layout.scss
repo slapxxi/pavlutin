@@ -9,16 +9,10 @@
   margin: 0 auto;
 }
 
-@media (--screen-tablet) {
+@media (--screen-medium) {
   .layout-container {
     padding-left: 10%;
     padding-right: 10%;
-  }
-}
-
-@media (--screen-desktop) {
-  .layout-container {
-    padding-left: 25%;
-    padding-right: 25%;
+    max-width: 960px;
   }
 }
