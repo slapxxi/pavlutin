@@ -9,9 +9,10 @@ gulp.task('default', ['build'])
 gulp.task('watch', () => {
   gulp.watch('src/**/*.js', ['build:js']);
   gulp.watch('src/**/*.{css,scss}', ['build:css']);
+  gulp.watch('src/**/*.{png,jpg,gif}', ['build:img']);
 });
 
-gulp.task('build', ['build:css', 'build:js']);
+gulp.task('build', ['build:css', 'build:js', 'build:img']);
 
 gulp.task('build:css', ['clean:css'], () => {
   const postcss = require('gulp-postcss');
@@ -42,12 +43,24 @@ gulp.task('build:js', ['clean:js'], () => {
     .pipe(gulp.dest('static/js'))
 });
 
+gulp.task('build:img', ['clean:img'], () => {
+  const imagemin = require('gulp-imagemin');
+
+  gulp.src('src/img/*.{png,ico,jpeg}')
+    .pipe(imagemin())
+    .pipe(gulp.dest('static/img/'));
+});
+
 gulp.task('clean:css', () => {
   return del(['static/css']);
 });
 
 gulp.task('clean:js', () => {
   return del(['static/js']);
+});
+
+gulp.task('clean:img', () => {
+  return del(['static/img']);
 });
 
 gulp.task('lint:css', () => {
