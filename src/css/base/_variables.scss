@@ -24,8 +24,10 @@
   --font-caps: "Raleway", Helvetica, sans-serif;
 
   --layout-gutter: 2.3rem;
+  --layout-spacing: 5%;
+  --layout-width-max: 960px;
 
-  @custom-media --screen-large (width >= 960px);
+  @custom-media --screen-large (width >= 1180px);
   @custom-media --screen-medium (width >= 600px);
 
   @custom-selector :--heading h1,h2,h3,h4,h5,h6;
