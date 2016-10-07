@@ -1,12 +1,20 @@
 .layout-footer {
+  position: relative;
   padding-top: 1em;
   padding-bottom: 1em;
-  padding-left: 5%;
-  padding-right: 5%;
-  margin-top: 7em;
   background-color: var(--color-bg-light);
   font-size: 0.9em;
   color: var(--color-font-light);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.3) 0%, transparent 50%, rgba(0,0,0,0) 100%);
+  }
 
   & > .copy {
     display: block;
@@ -18,10 +26,15 @@
   }
 
   & :--link {
+    text-decoration: underline;
     color: var(--color-font-lightest);
   }
 
   & :--link-active {
-    color: var(--color-font-em-dark);
+    text-decoration: none;
+  }
+
+  :--heading {
+    color: var(--color-font-lightest);
   }
 }

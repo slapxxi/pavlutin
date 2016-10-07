@@ -20,10 +20,10 @@ gulp.task('build:css', ['clean:css'], () => {
   const cssnano = require('gulp-cssnano');
 
   const postcssProcessors = [
+    require('postcss-cssnext'),
     require('precss')({
       import: {extension: 'scss'}
-    }),
-    require('postcss-cssnext')
+    })
   ];
 
   return gulp.src('src/**/*.css')

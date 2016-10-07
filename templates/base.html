@@ -18,7 +18,7 @@
       <a href="{% url 'pages:index' %}">Slava Pavlutin</a>
     </h1>
 
-    <nav class="nav">
+    <nav class="nav" role="navigation">
       <ul class="nav">
         <li class="nav__item">
           <a href="{% url 'pages:index' %}">Projects</a>
@@ -33,28 +33,27 @@
     </nav>
   </header>
 
-  <div class="layout-content layout-container">
+  <section class="layout-content layout-container">
     {% block content %}
     {% endblock %}
-  </div>
+  </section>
 
   <footer class="layout-footer layout-container_fill">
-    <nav>
-      <ul class="nav">
-        <li class="nav__item">
-          <a href="http://twitter.com" rel="external">Twitter</a>
-        </li>
-        <li class="nav__item">
-          <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
-        </li>
-      </ul>
-    </nav>
+    <h3>Social Links</h3>
+    <ul>
+      <li>
+        <a href="http://twitter.com" rel="external">Twitter</a>
+      </li>
+      <li>
+        <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
+      </li>
+    </ul>
 
     <small class="copy">
       <span class="logo">Slava Pavlutin</span> &copy; 2016
     </small>
   </footer>
 
-  <script async src="{% static 'js/bundle.js' %}"></script>
+  <script src="{% static 'js/bundle.js' %}"></script>
 </body>
 </html>
