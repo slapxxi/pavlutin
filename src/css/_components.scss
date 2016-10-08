@@ -70,12 +70,12 @@
   &.btn-menu_active {
     &:before {
       box-shadow: transparent 0 0 0 0;
-      top: 50%;
+      top: 41%;
       transform: rotate(225deg);
     }
 
     &:after {
-      top: 50%;
+      top: 41%;
       transform: rotate(315deg);
     }
   }
