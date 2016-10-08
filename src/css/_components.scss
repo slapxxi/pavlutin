@@ -33,3 +33,50 @@
     color: var(--color-font-em);
   }
 }
+
+.btn-menu {
+  display: block;
+  background: transparent;
+  position: relative;
+  width: 2.3em;
+  height: 2em;
+  padding: 0;
+  margin-top: 0.9rem;
+  color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &:before, &:after {
+    background: var(--color-font);
+    backface-visibility: hidden;
+    content: '';
+    width: 2.3em;
+    height: 2px;
+    left: 0;
+    transition: 0.35s;
+  }
+
+  &:before {
+    position: absolute;
+    box-shadow: var(--color-font) 0 0.9em 0 0;
+    top: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: calc(100% - 3px);
+  }
+
+  &.btn-menu_active {
+    &:before {
+      box-shadow: transparent 0 0 0 0;
+      top: 50%;
+      transform: rotate(225deg);
+    }
+
+    &:after {
+      top: 50%;
+      transform: rotate(315deg);
+    }
+  }
+}

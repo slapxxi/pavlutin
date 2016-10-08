@@ -8,12 +8,12 @@
   font-size: 0.9em;
   color: var(--color-font-light);
 
-  & > .button {
-    float: left;
+  & > .btn-menu {
+    float: right;
   }
 
   & > .logo {
-    float: right;
+    float: left;
     margin-top: 0.4rem;
     line-height: 1.5em;
     text-align: right;
@@ -38,10 +38,10 @@
   transition: all 0.3s;
 
   & > .nav {
-    transition: transform 0.3s;
     width: 0;
     height: 0;
     transform: scaleX(0);
+    transition: transform 0.3s;
   }
 }
 
@@ -54,8 +54,13 @@
   height: 100%;
 
   & > .nav {
-    width: auto;
+    position: absolute;
+    top: calc(50% - 10em);
+    left: 5%;
+    width: 80%;
     height: auto;
+    padding-left: 1em;
+    padding-right: 1em;
     transform: scaleX(1);
   }
 }
@@ -65,13 +70,12 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    & > .button {
+    & > .btn-menu {
       display: none;
     }
 
     & > .logo {
-      float: right;
-      width: 30%;
+      float: left;
       line-height: 1;
 
       & > a {
@@ -81,9 +85,10 @@
     }
 
     & > .nav {
-      float: left;
-      width: 70%;
+      float: right;
       clear: none;
+      width: auto;
+      height: auto;
     }
   }
 
