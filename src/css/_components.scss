@@ -39,9 +39,9 @@
   background: transparent;
   position: relative;
   width: 2.3em;
-  height: 2em;
+  height: 1.5em;
   padding: 0;
-  margin-top: 0.9rem;
+  margin-top: 1.17rem;
   color: transparent;
   border: 0;
   cursor: pointer;
@@ -58,7 +58,7 @@
 
   &:before {
     position: absolute;
-    box-shadow: var(--color-font) 0 0.9em 0 0;
+    box-shadow: var(--color-font) 0 0.62333em 0 0;
     top: 0;
   }
 
