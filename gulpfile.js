@@ -1,5 +1,12 @@
 const gulp = require('gulp');
 const del = require('del');
+const webpack = require('gulp-webpack');
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
+const cssnano = require('gulp-cssnano');
+const imagemin = require('gulp-imagemin');
+const stylelint = require('gulp-stylelint');
+const webpackConfig = require('./webpack.config.js');
 
 const ENV = environment(process.env.NODE_ENV);
 
@@ -15,10 +22,6 @@ gulp.task('watch', () => {
 gulp.task('build', ['build:css', 'build:js', 'build:img']);
 
 gulp.task('build:css', ['clean:css'], () => {
-  const postcss = require('gulp-postcss');
-  const sourcemaps = require('gulp-sourcemaps');
-  const cssnano = require('gulp-cssnano');
-
   const postcssProcessors = [
     require('precss')({
       import: {extension: 'scss'}
@@ -36,15 +39,12 @@ gulp.task('build:css', ['clean:css'], () => {
 });
 
 gulp.task('build:js', ['clean:js'], () => {
-  const webpack = require('gulp-webpack');
   return gulp.src('src/js/index.js')
-    .pipe(webpack(require('./webpack.config')))
+    .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('static/js'))
 });
 
 gulp.task('build:img', ['clean:img'], () => {
-  const imagemin = require('gulp-imagemin');
-
   gulp.src('src/img/*.{png,ico,jpeg}')
     .pipe(imagemin())
     .pipe(gulp.dest('static/img/'));
@@ -63,7 +63,6 @@ gulp.task('clean:img', () => {
 });
 
 gulp.task('lint:css', () => {
-  const stylelint = require('gulp-stylelint');
   return gulp.src('src/**/*.{css,scss}')
     .pipe(stylelint({reporters: [{formatter: 'string', console: true}]}));
 });

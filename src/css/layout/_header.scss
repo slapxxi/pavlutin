@@ -1,20 +1,27 @@
-.layout-header {
+.l-header {
   overflow: auto;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-family: var(--font-caps);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: var(--color-bg);
   text-transform: uppercase;
+  font-family: var(--font-caps);
   font-size: 0.9em;
   color: var(--color-font-light);
 
-  > .logo {
+  & > .button {
+    float: left;
+  }
+
+  & > .logo {
+    float: right;
     margin-top: 0.4rem;
-    line-height: 1em;
+    line-height: 1.5em;
     text-align: right;
     color: var(--color-font-light);
   }
 
-  .nav {
+  & > .nav {
+    clear: both;
     line-height: 1;
   }
 
@@ -27,14 +34,45 @@
   }
 }
 
+.l-header_dynamic {
+  transition: all 0.3s;
+
+  & > .nav {
+    transition: transform 0.3s;
+    width: 0;
+    height: 0;
+    transform: scaleX(0);
+  }
+}
+
+.l-header_fullscreen {
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+
+  & > .nav {
+    width: auto;
+    height: auto;
+    transform: scaleX(1);
+  }
+}
+
 @media (--screen-medium) {
-  .layout-header {
+  .l-header {
     padding-top: 0;
     padding-bottom: 0;
+
+    & > .button {
+      display: none;
+    }
 
     & > .logo {
       float: right;
       width: 30%;
+      line-height: 1;
 
       & > a {
         display: block;
@@ -45,6 +83,11 @@
     & > .nav {
       float: left;
       width: 70%;
+      clear: none;
     }
+  }
+
+  .l-header_dynamic > .nav {
+    display: block;
   }
 }
