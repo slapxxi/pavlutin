@@ -17,14 +17,13 @@ gulp.task('build', ['build:css', 'build:js', 'build:img']);
 gulp.task('build:css', ['clean:css'], () => {
   const postcss = require('gulp-postcss');
   const sourcemaps = require('gulp-sourcemaps');
-  const concatcss = require('gulp-concat-css');
   const cssnano = require('gulp-cssnano');
 
   const postcssProcessors = [
-    require('postcss-cssnext'),
     require('precss')({
       import: {extension: 'scss'}
-    })
+    }),
+    require('postcss-cssnext')
   ];
 
   return gulp.src('src/**/*.css')

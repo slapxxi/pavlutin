@@ -1,13 +1,27 @@
 <footer class="layout-footer layout-container_fill">
-  <h3>Social Links</h3>
-  <ul>
-    <li>
-      <a href="http://twitter.com" rel="external">Twitter</a>
-    </li>
-    <li>
-      <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
-    </li>
-  </ul>
+  <div class="box">
+    <h3>Navigation</h3>
+    <nav role="navigation">
+      <ul>
+        <li><a href="{% url 'pages:index' %}">Home</a></li>
+        <li><a href="{% url 'pages:index' %}">Projects</a></li>
+        <li><a href="{% url 'pages:index' %}">Blog</a></li>
+        <li><a href="{% url 'pages:index' %}">Contact Me</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="box">
+    <h3>Social Links</h3>
+    <ul>
+      <li>
+        <a href="http://twitter.com" rel="external">Twitter</a>
+      </li>
+      <li>
+        <a href="http://github.com/slavapavlutin" rel="external">GitHub</a>
+      </li>
+    </ul>
+  </div>
 
   <small class="copy">
     <span class="logo">Slava Pavlutin</span> &copy; 2016
