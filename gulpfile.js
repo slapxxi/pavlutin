@@ -7,13 +7,14 @@ const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const stylelint = require('gulp-stylelint');
 const webpackConfig = require('./webpack.config.js');
+const browsersync = require('browser-sync');
 
 const ENV = environment(process.env.NODE_ENV);
 
 
 gulp.task('default', ['build'])
 
-gulp.task('watch', () => {
+gulp.task('watch', ['browsersync'], () => {
   gulp.watch('src/**/*.js', ['build:js']);
   gulp.watch('src/**/*.{css,scss}', ['build:css']);
   gulp.watch('src/**/*.{png,jpg,gif,svg}', ['build:img']);
@@ -36,12 +37,14 @@ gulp.task('build:css', ['clean:css'], () => {
     .pipe(cssnano({discardComments: {removeAll: true}}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('static'))
+    .pipe(browsersync.stream());
 });
 
 gulp.task('build:js', ['clean:js'], () => {
   return gulp.src('src/js/index.js')
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('static/js'))
+    .pipe(browsersync.stream());
 });
 
 gulp.task('build:img', ['clean:img'], () => {
@@ -65,6 +68,12 @@ gulp.task('clean:img', () => {
 gulp.task('lint:css', () => {
   return gulp.src('src/**/*.{css,scss}')
     .pipe(stylelint({reporters: [{formatter: 'string', console: true}]}));
+});
+
+gulp.task('browsersync', () => {
+  browsersync.init({
+    proxy: 'localhost:8000'
+  });
 });
 
 function environment(env) {
