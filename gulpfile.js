@@ -18,6 +18,9 @@ gulp.task('watch', ['browsersync'], () => {
   gulp.watch('src/**/*.js', ['build:js']);
   gulp.watch('src/**/*.{css,scss}', ['build:css']);
   gulp.watch('src/**/*.{png,jpg,gif,svg}', ['build:img']);
+  gulp.watch('templates/**/*.html', () => {
+    browsersync.reload();
+  });
 });
 
 gulp.task('build', ['build:css', 'build:js', 'build:img']);
