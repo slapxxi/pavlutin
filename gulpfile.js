@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const del = require('del');
-const webpack = require('gulp-webpack');
+const webpack = require('webpack-stream');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('gulp-cssnano');
@@ -46,6 +46,7 @@ gulp.task('build:css', ['clean:css'], () => {
 gulp.task('build:js', ['clean:js'], () => {
   return gulp.src('src/js/index.js')
     .pipe(webpack(webpackConfig))
+    .on('error', handleError)
     .pipe(gulp.dest('static/js'))
     .pipe(browsersync.stream());
 });

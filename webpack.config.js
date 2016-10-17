@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 
-
 module.exports = {
   entry: './src/js/index.js',
   output: {
@@ -26,6 +25,11 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       comments: false,
       compress: {warnings: false}
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ],
   devServer: {
