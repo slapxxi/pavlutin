@@ -9,6 +9,7 @@ $(function() {
     $(this).toggleClass('btn-menu_active');
     $header.toggleClass('header_fullscreen');
     $header.siblings().toggle();
+    $header.toggleClass('header_theme_inverse');
     return false;
   });
 

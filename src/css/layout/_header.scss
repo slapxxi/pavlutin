@@ -4,18 +4,35 @@
   font-family: var(--font-caps);
   background-color: var(--color-bg);
   color: var(--color-text-light);
+
+  & :--link {
+    color: var(--color-text);
+  }
+
+  & :--link-active {
+    color: var(--color-text-em);
+  }
+}
+
+.header_theme_inverse {
+  background-color: var(--color-bg-light);
+  color: var(--white);
+
+  & :--link {
+    color: var(--color-bg);
+  }
+
+  & :--link-active {
+    color: var(--color-text-em-dark);
+  }
+
+  .header__menu:after, .header__menu:before {
+    background-color: var(--color-bg);
+  }
 }
 
 .header__logo {
   color: var(--color-text-light);
-}
-
-.header :--link {
-  color: var(--color-text);
-}
-
-.header :--link-active {
-  color: var(--color-text-em);
 }
 
 /* Display */
