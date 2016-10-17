@@ -1,20 +1,24 @@
 .nav {
+  overflow: auto;
   margin: 0;
   padding: 0;
-  list-style: none;
+
+  & > ul {
+    list-style: none;
+  }
 }
 
 .nav__item {
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid var(--color-font-light);
+  border-bottom: 1px solid var(--color-text-light);
 
   &:last-child {
     border: 0;
   }
 
   &:hover {
-    border-color: var(--color-font-em);
+    border-color: var(--color-text-em);
   }
 
   & > a {
@@ -23,7 +27,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--color-font-em);
+      color: var(--color-text-em);
     }
   }
 }

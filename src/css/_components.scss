@@ -13,12 +13,12 @@
 .title__main {
   margin-bottom: 0;
   text-transform: uppercase;
-  color: var(--color-font-dark);
+  color: var(--color-text-dark);
 }
 
 .title__secondary {
   margin-top: 0;
-  color: var(--color-font-em);
+  color: var(--color-text-em);
 }
 
 
@@ -27,10 +27,17 @@
   text-decoration: none;
 
   &:link, &:visited {
-    color: var(--color-font-light);
+    color: var(--color-text-light);
   }
 
   &:hover, &:active {
-    color: var(--color-font-em);
+    color: var(--color-text-em);
   }
+}
+
+.link {
+  display: inline-block;
+}
+
+.link_active {
 }

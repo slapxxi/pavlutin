@@ -1,10 +1,10 @@
-<header class="l-header layout-container">
-  <h1 class="logo">
-    <a target="_blank" href="{% url 'pages:index' %}">Slava Pavlutin</a>
+<header class="header container">
+  <h1 class="logo header__logo">
+    <a href="{% url 'pages:index' %}">Slava Pavlutin</a>
   </h1>
 
-  <nav class="nav" role="navigation">
-    <ul class="nav">
+  <nav class="nav header__nav" role="navigation">
+    <ul>
       <li class="nav__item">
         <a href="{% url 'pages:index' %}">Projects</a>
       </li>
@@ -12,7 +12,7 @@
         <a href="{% url 'pages:index' %}">Blog</a>
       </li>
       <li class="nav__item">
-        <a href="{% url 'pages:index' %}">Contact Me</a>
+        <a href="{% url 'pages:index' %}">About</a>
       </li>
     </ul>
   </nav>

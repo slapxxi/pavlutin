@@ -1,21 +1,23 @@
-import $ from 'jquery';
-import { addAnchors } from './utils';
+$(function() {
+  $('body').addClass('js');
 
-
-$(document).ready(() => {
-  addAnchors();
-
-  const $header = $('.l-header');
+  const $header = $('.header');
   const $nav = $header.find('> .nav');
-  const $menu = $('<button class="btn-menu"></button>');
+  const $menu = $('<button class="btn-menu header__menu"></button>');
 
-  $menu.on('click', function(e) {
+  $menu.on('click.menu', function(e) {
     $(this).toggleClass('btn-menu_active');
-    $header.toggleClass('l-header_fullscreen');
+    $header.toggleClass('header_fullscreen');
     $header.siblings().toggle();
     return false;
   });
 
-  $header.addClass('l-header_dynamic');
+  $(window).on('resize.menu', function(e) {
+    const mq = window.matchMedia('(min-width: 600px)');
+    if (mq.matches && $header.hasClass('header_fullscreen')) {
+      $menu.trigger('click.menu');
+    }
+  });
+
   $header.prepend($menu);
 });

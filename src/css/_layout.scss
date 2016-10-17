@@ -3,7 +3,7 @@
 @import 'layout/footer';
 
 
-.layout-container, .layout-container_fill {
+.container, .container_fill {
   box-sizing: content-box;
   padding-left: 5%;
   padding-right: 5%;
@@ -12,15 +12,15 @@
 }
 
 @media (--screen-medium) {
-  .layout-container, .layout-container_fill {
+  .container, .container_fill {
     padding-left: 10%;
     padding-right: 10%;
   }
 }
 
 @media (--screen-large) {
-  .layout-container_fill {
-    padding-left: calc((100% - 960px) / 2);
-    padding-right: calc((100% - 960px) / 2);
+  .container_fill {
+    padding-left: calc((100% - var(--layout-width-max)) / 2);
+    padding-right: calc((100% - var(--layout-width-max)) / 2);
   }
 }

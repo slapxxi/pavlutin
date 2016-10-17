@@ -1,59 +1,73 @@
-.l-header {
+/* Theme */
+
+.header {
+  font-family: var(--font-caps);
+  background-color: var(--color-bg);
+  color: var(--color-text-light);
+}
+
+.header__logo {
+  color: var(--color-text-light);
+}
+
+.header :--link {
+  color: var(--color-text);
+}
+
+.header :--link-active {
+  color: var(--color-text-em);
+}
+
+/* Display */
+
+.header {
   overflow: auto;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: var(--color-bg);
   text-transform: uppercase;
-  font-family: var(--font-caps);
   font-size: 0.9em;
-  color: var(--color-font-light);
-
-  & > .btn-menu {
-    float: right;
-  }
-
-  & > .logo {
-    float: left;
-    margin-top: 0.4rem;
-    line-height: 1.5em;
-    text-align: right;
-    color: var(--color-font-light);
-  }
-
-  & > .nav {
-    clear: both;
-    line-height: 1;
-  }
-
-  :--link {
-    color: var(--color-font);
-  }
-
-  :--link-active {
-    color: var(--color-font-em);
-  }
 }
 
-.l-header_dynamic {
-  transition: all 0.3s;
+.header__menu {
+  float: right;
+}
 
-  & > .nav {
+.header__nav {
+  clear: both;
+  line-height: 1;
+}
+
+.header__logo {
+  float: left;
+  margin-top: 0.4rem;
+  line-height: 1.5em;
+  text-align: right;
+}
+
+/* JS Enabled */
+
+.js {
+  .header {
+    transition: 0.3s;
+  }
+
+  .header__nav {
     width: 0;
     height: 0;
     transform: scaleX(0);
     transition: transform 0.3s;
   }
-}
 
-.l-header_fullscreen {
-  overflow-x: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 100%;
+  .header_fullscreen {
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+  }
 
-  & > .nav {
+  .header_fullscreen > .header__nav {
     position: absolute;
     top: calc(50% - 10em);
     left: 5%;
@@ -65,35 +79,38 @@
   }
 }
 
+
 @media (--screen-medium) {
-  .l-header {
+  .header {
     padding-top: 0;
     padding-bottom: 0;
+  }
 
-    & > .btn-menu {
-      display: none;
-    }
+  .header__nav {
+    float: right;
+    clear: none;
+  }
 
-    & > .logo {
-      float: left;
-      line-height: 1;
+  .header__menu {
+    display: none;
+  }
 
-      & > a {
-        display: block;
-        padding: 1em 0;
-      }
-    }
+  .header__logo {
+    float: left;
+    line-height: 1;
 
-    & > .nav {
-      float: right;
-      clear: none;
-      width: auto;
-      height: auto;
+    & > a {
+      display: block;
+      padding: 1em 0;
     }
   }
 
-  .l-header_dynamic > .nav {
-    display: block;
-    transform: none;
+  .js {
+    .header__nav {
+      display: block;
+      transform: none;
+      width: auto;
+      height: auto;
+    }
   }
 }

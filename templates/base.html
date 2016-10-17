@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#ED1C24">
-  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Slava Pavlutin - Frontend Web Developer</title>
 
@@ -16,11 +16,11 @@
 <body>
   {% include "partials/_header.html" %}
 
-  <section class="layout-content layout-container">
+  <section class="content container">
     {% block content %}
     {% endblock %}
   </section>
-  
+
   {% include "partials/_footer.html" %}
 
   <script src="{% static 'js/bundle.js' %}"></script>

@@ -11,7 +11,7 @@
   cursor: pointer;
 
   &:before, &:after {
-    background: var(--color-font);
+    background: var(--color-text);
     backface-visibility: hidden;
     content: '';
     width: 2.3em;
@@ -22,7 +22,7 @@
 
   &:before {
     position: absolute;
-    box-shadow: var(--color-font) 0 0.72em 0 0;
+    box-shadow: var(--color-text) 0 0.72em 0 0;
     top: 0;
   }
 
