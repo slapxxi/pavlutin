@@ -1,24 +1,42 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import Menu from './components/Menu';
+import rootReducer from './reducers/root-reducer';
+import { MENU_HIDE } from './actions/actions';
+
+
 $(function() {
-  $('body').addClass('js');
+  enableProgressiveEnhancement();
 
-  const $header = $('.header');
-  const $nav = $header.find('> .nav');
-  const $menu = $('<button class="btn-menu header__menu"></button>');
+  const store = createStore(rootReducer);
 
-  $menu.on('click.menu', function(e) {
-    $(this).toggleClass('btn-menu_active');
-    $header.toggleClass('header_fullscreen');
-    $header.siblings().toggle();
-    $header.toggleClass('header_theme_inverse');
-    return false;
+  store.subscribe(() => {
+    const { isMenuActive } = store.getState();
+    const $header = $('.header');
+    if (isMenuActive) {
+      $header.addClass('header_fullscreen');
+      $header.addClass('header_theme_inverse');
+      $header.siblings().hide();
+    } else {
+      $header.removeClass('header_fullscreen');
+      $header.removeClass('header_theme_inverse');
+      $header.siblings().show();
+    }
   });
 
   $(window).on('resize.menu', function(e) {
     const mq = window.matchMedia('(min-width: 600px)');
-    if (mq.matches && $header.hasClass('header_fullscreen')) {
-      $menu.trigger('click.menu');
+    if (mq.matches) {
+      store.dispatch({type: MENU_HIDE})
     }
   });
 
-  $header.prepend($menu);
+  ReactDOM.render(<Provider store={store}><Menu/></Provider>, document.querySelector('.menu-container'));
 });
+
+function enableProgressiveEnhancement() {
+  $('body').addClass('js');
+}
