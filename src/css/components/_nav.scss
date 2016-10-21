@@ -1,9 +1,10 @@
 .nav {
   overflow: auto;
-  margin: 0;
-  padding: 0;
 
   & > ul {
+    overflow: auto;
+    padding: 0;
+    margin: 0;
     list-style: none;
   }
 }
@@ -32,7 +33,46 @@
   }
 }
 
+
 @media (--screen-medium) {
+  .nav__item_animated {
+    overflow: hidden;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0.75em;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-bg-light);
+      transform: scaleX(-0.1);
+    }
+
+    &:before {
+      transform-origin: right;
+      transition: transform 0.3s cubic-bezier(.7,.2,.2,.9);
+    }
+
+    &:after {
+      transform-origin: left;
+      transition: transform 0s ease-out;
+    }
+
+    &:hover:before, &.active:before {
+      transform: scaleX(1);
+      transition: transform 0s;
+      opacity: 0;
+    }
+
+    &:hover:after, &.active:after {
+      transform: scaleX(1);
+      transition: transform 0.3s cubic-bezier(.7,.2,.2,.9);
+    }
+  }
+
   .nav__item {
     display: inline-block;
     border: 0;
@@ -43,48 +83,8 @@
     }
 
     & > a {
-      overflow: hidden;
-      position: relative;
-      padding: 1.6em 0;
+      padding: 1em 0;
       line-height: 1.9;
-
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: 1em;
-        height: 3px;
-        background-color: var(--color-bg-light);
-        transform: scaleX(-0.1);
-        transform-origin: right;
-        transition: transform 0.3s cubic-bezier(.7,.2,.2,.9);
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 1em;
-        left: 0;
-        bottom: 1em;
-        width: 100%;
-        height: 3px;
-        background-color: var(--color-bg-light);
-        transform: scaleX(-0.1);
-        transform-origin: left;
-        transition: transform 0s ease-out;
-      }
-
-      &:hover:before, &.active:before {
-        transform: scaleX(1);
-        transition: transform 0s;
-        opacity: 0;
-      }
-
-      &:hover:after, &.active:after {
-        transform: scaleX(1);
-        transition: transform 0.3s cubic-bezier(.7,.2,.2,.9);
-      }
     }
   }
 }

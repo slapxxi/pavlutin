@@ -13,19 +13,7 @@ $(function() {
 
   const store = createStore(rootReducer);
 
-  store.subscribe(() => {
-    const { isMenuActive } = store.getState();
-    const $header = $('.header');
-    if (isMenuActive) {
-      $header.addClass('header_fullscreen');
-      $header.addClass('header_theme_inverse');
-      $header.siblings().hide();
-    } else {
-      $header.removeClass('header_fullscreen');
-      $header.removeClass('header_theme_inverse');
-      $header.siblings().show();
-    }
-  });
+  store.subscribe(() => { subscribeMenu(store) });
 
   $(window).on('resize.menu', function(e) {
     const mq = window.matchMedia('(min-width: 600px)');
@@ -39,4 +27,18 @@ $(function() {
 
 function enableProgressiveEnhancement() {
   $('body').addClass('js');
+}
+
+function subscribeMenu(store) {
+  const { isMenuActive } = store.getState();
+  const $header = $('.header');
+  if (isMenuActive) {
+    $header.addClass('header_fullscreen');
+    $header.addClass('header_theme_inverse');
+    $header.siblings().hide();
+  } else {
+    $header.removeClass('header_fullscreen');
+    $header.removeClass('header_theme_inverse');
+    $header.siblings().show();
+  }
 }

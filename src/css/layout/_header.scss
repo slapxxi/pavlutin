@@ -56,9 +56,16 @@
 
 .header__logo {
   float: left;
-  margin-top: 0.4rem;
-  line-height: 1.5em;
   text-align: right;
+
+  @media (--screen-medium) {
+    float: left;
+
+    & > a {
+      display: block;
+      padding: 1.25em 0;
+    }
+  }
 }
 
 /* JS Enabled */
@@ -113,13 +120,6 @@
   }
 
   .header__logo {
-    float: left;
-    line-height: 1;
-
-    & > a {
-      display: block;
-      padding: 1em 0;
-    }
   }
 
   .js {

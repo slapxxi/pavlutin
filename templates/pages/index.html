@@ -1,35 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <hgroup class="title">
-    <h1 class="title__main">Frontend Development</h1>
-    <h3 class="title__secondary">Done Right</h3>
-  </hgroup>
-  <p>
-    I'm a frontend web developer who is proficient with all the modern
-    web technologies such as HTML5, CSS3, ES6 etc.
-  </p>
-
-  <section>
-    <h1>My Skills</h1>
-    <p>{% lorem %}</p>
-    <ul>
-      <li>
-        <h2>HTML5</h2>
-        <p>Semantic markup etc.</p>
-      </li>
-      <li>
-        <h2>CSS</h2>
-        <p>Modern CSS, transitions, animation etc.</p>
-      </li>
-      <li>
-        <h2>JavaScript</h2>
-        <p>jQuery, ES6, unit testing, clean code etc.</p>
-      </li>
-      <li>
-        <h2>Photoshop &amp; Illustrator</h2>
-        <p>SVG, vector, raster etc.</p>
-      </li>
-    </ul>
+  <section class="hero container decorate-shadow">
+    <hgroup class="title title_theme_bare hero__title">
+      <h1 class="title__main">Frontend Development</h1>
+      <h2 class="title__secondary hero__subtitle">From Problems to Solutions</h2>
+    </hgroup>
   </section>
+
+  <main class="container">
+    <h3>About Me</h3>
+    <p>{% lorem %}</p>
+  </main>
 {% endblock %}
